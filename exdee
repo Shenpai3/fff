@@ -1,0 +1,27 @@
+#include "stdafx.h"  //here all librarys
+ 
+int _tmain(int argc, _TCHAR* argv[])
+{
+    srand(time(NULL));
+ 
+    double aver=0;
+    int size=0,sum=0;
+    cout << "Enter size of array: ";
+    cin >>size;
+ 
+    int * pA=new int [size];
+ 
+    // in cycle: init array,add element of array to sum,show element
+    cout << "Your array: ";
+    for (int i=0; i < size; i++)
+    {
+        pA[i]=rand() %20;
+        sum+=pA[i];
+        cout << pA[i] <<' ';
+    }
+     
+    cout <<endl << "Average number on array is: " <<sum/size<<endl;
+    delete [] pA;
+ 
+    return 0;
+}
